@@ -1,9 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const Dashboard = require('webpack-dashboard')
-const DashboardPlugin = require('webpack-dashboard/plugin')
-const dashboard = new Dashboard()
 
 module.exports = {
   devtool : 'source-map',
@@ -44,7 +41,6 @@ module.exports = {
         warnings: false
       }
     }),
-    new ExtractTextPlugin('bundle.css'),
-    new DashboardPlugin(dashboard.setData)
+    new ExtractTextPlugin('bundle.css')
   ]
 }

@@ -1,9 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const Dashboard = require('webpack-dashboard')
-const DashboardPlugin = require('webpack-dashboard/plugin')
-const dashboard = new Dashboard()
 
 module.exports = {
   devtool: "cheap-module-eval-source-map",
@@ -36,8 +33,7 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
-    new ExtractTextPlugin('bundle.css'),
-    new DashboardPlugin(dashboard.setData)
+    new ExtractTextPlugin('bundle.css')
   ]
 
 }
