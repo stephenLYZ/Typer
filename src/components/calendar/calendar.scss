@@ -1,0 +1,102 @@
+
+.calender-cantainer {
+	max-width: 300px; 
+	max-height: 300px;
+
+
+	background-color: #eee;
+    -moz-box-shadow: 0 0 5px #ccc;
+    -webkit-box-shadow: 0 0 5px #ccc;
+    box-shadow: 0 0 5px #ccc;
+    font: normal 15px Helvetica Neue, Helvetica, Arial, sans-serif;
+    min-width: 280px;
+
+    .row {
+    	display: flex;
+	    flex-flow: row nowrap;
+	    width: 100%;
+	    justify-content: center;
+    }
+
+    .cell {
+    	background-color: #ffffff;
+	    align-items: center;
+	    display: flex;
+	    flex-flow: row nowrap;
+	    flex-grow: 1;
+	    flex-basis: 0;
+	    justify-content: center;
+	    word-wrap: break-word;
+	    overflow-wrap: break-word;
+	    height: 3rem;
+    }
+}
+
+
+.calendar-header {
+	flex-grow: 1;
+    flex-basis: 0;
+
+    .m-prev, .m-next, .y-next, .y-prev{
+    	background-color: #ffffff;
+	    cursor: pointer;
+	    outline: none;
+	    text-align:center;
+    }
+    .m-prev:before, .m-next:before ,.y-next:before, .y-prev:before {
+	    position: relative;
+	    top: 0;
+	    display: inline-block;
+	    width: 1.5em;
+	    height: 1.5em;	
+    }
+    .y-prev:before {
+		content: "<<"
+	}
+    .y-next:before {
+	    content: ">>";
+    }
+	.m-prev:before {
+		content: "<"
+	}
+    .m-next:before {
+	    content: ">";
+    }
+    .content {
+    	flex-grow: 3;
+    	flex-basis: max-content;
+
+    	span {
+    		margin-right: 10px;
+    	}
+    }
+}
+
+.calendar-week {
+	flex-grow: 1;
+    flex-basis: 0;
+
+    .cell {
+    	font-weight: bold;
+    }
+}
+
+.calendar-panel {
+	background: hsl(0, 0%, 100%);
+	.date-cell {
+		width: calc(100% / 7);
+		display: inline-block;
+		text-align: center;
+		line-height: 2.5rem;
+	}
+	.today {
+		border: none;
+	    font-size: 11px;
+	    font-size: .7rem;
+	    -webkit-transition: all .2s ease-out;
+	    transition: all .2s ease-out;
+	    cursor: pointer;
+	    background: none;
+	    background: hsl(0, 0%, 88%);
+	}
+}

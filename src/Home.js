@@ -1,8 +1,11 @@
-import React from 'react'
-import { render } from 'react-dom'
-import App from './components/App'
-import './styles/main.scss'
+import React, { Component } from 'react'
+import Calendar from './components/calendar/Calendar'
 
-const router = ()
+export default class Home extends Component {
 
-render(router, document.getElementById('root'))
+	render() {
+		return (
+		  <Calendar />
+		)
+	}
+}
