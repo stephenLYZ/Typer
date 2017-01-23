@@ -4,13 +4,16 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   devtool: "cheap-module-eval-source-map",
-  entry: [
-    'webpack-hot-middleware/client',
-    './src/App'
-  ],
+  entry: {
+    app: [
+        'webpack-hot-middleware/client',
+        './src/App'
+      ],
+    vendor: ["history", "qs", "react", "react-dom","react-router","whatwg-fetch"] 
+  },
   output: {
     path: path.join(__dirname,'dist'),
-    filename: 'bundle.js',
+    filename: 'typer.min.js',
     publicPath: '/dist/'
   },
   module: {
@@ -33,7 +36,12 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
-    new ExtractTextPlugin('bundle.css')
+    new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.bundle.js"),
+    new webpack.optimize.UglifyJsPlugin({
+      sourceMap: true,
+      warning: false,
+    }),
+    new ExtractTextPlugin('typer.css')
   ]
 
 }

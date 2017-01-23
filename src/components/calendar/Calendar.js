@@ -11,7 +11,7 @@ export default class Calendar extends Component {
   	super(props)
 
     const date = new Date()
-  	
+
     this.state = {
   		year: date.getFullYear(),
       month: date.getMonth(),
@@ -83,7 +83,7 @@ export default class Calendar extends Component {
     Object.assign(state,this.calculate.call(null, state.year, state.month))
     this.setState(state)
   }
-
+  
   renderHeader() {
     return (
       <CalendarHeader
@@ -115,6 +115,7 @@ export default class Calendar extends Component {
         firstOfMonth = {this.state.firstOfMonth}
         daysInMonth = {this.state.daysInMonth}
         today = {this.state.today}
+        posts = {this.props.posts}
       />
     )
   }

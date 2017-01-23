@@ -1,6 +1,6 @@
 
 .calender-cantainer {
-	max-width: 300px; 
+	max-width: 300px;
 	max-height: 300px;
 
 
@@ -48,7 +48,7 @@
 	    top: 0;
 	    display: inline-block;
 	    width: 1.5em;
-	    height: 1.5em;	
+	    height: 1.5em;
     }
     .y-prev:before {
 		content: "<<"
@@ -90,13 +90,10 @@
 		line-height: 2.5rem;
 	}
 	.today {
-		border: none;
-	    font-size: 11px;
-	    font-size: .7rem;
-	    -webkit-transition: all .2s ease-out;
-	    transition: all .2s ease-out;
-	    cursor: pointer;
-	    background: none;
-	    background: hsl(0, 0%, 88%);
+		margin: -1px;
+		cursor: pointer;
+		background: none;
+		border: 1px solid hsl(0, 100%, 85%);
+		border-radius: 50% 50%;
 	}
 }

@@ -4,12 +4,13 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   devtool : 'source-map',
-  entry: [
-    './src/index'
-  ],
+  entry: {
+    app:  './src/App',
+    vendor: ["history", "qs", "react", "react-dom","react-router","whatwg-fetch"] 
+  },
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: 'typer.min.js',
     publicPath: '/static/'
   },
   module: {
@@ -31,6 +32,7 @@ module.exports = {
   },
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.bundle.js"),
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify('production')
@@ -41,6 +43,6 @@ module.exports = {
         warnings: false
       }
     }),
-    new ExtractTextPlugin('bundle.css')
+    new ExtractTextPlugin('typer.css')
   ]
 }
