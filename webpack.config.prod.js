@@ -3,10 +3,9 @@ const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
-  devtool : 'source-map',
   entry: {
     app:  './src/App',
-    vendor: ["history", "qs", "react", "react-dom","react-router","whatwg-fetch"] 
+    vendor: ["history", "qs", "react", "react-dom","react-router","whatwg-fetch"]
   },
   output: {
     path: path.join(__dirname, 'dist'),

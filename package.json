@@ -2,7 +2,8 @@
   "name": "Typer",
   "version": "1.0.1",
   "description": "",
-  "main": "src/index.js",
+  "main": "src/App.js",
+  "bin": "./bin/type.js",
   "scripts": {
     "start": "node server.js",
     "lint": "eslint src",
@@ -52,6 +53,8 @@
     "webpack-hot-middleware": "^2.12.2"
   },
   "dependencies": {
+    "commander": "^2.9.0",
+    "fs-extra": "^2.0.0",
     "qs": "^6.3.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
@@ -59,6 +62,7 @@
     "react-router": "^3.0.1",
     "redux": "^3.6.0",
     "webpack": "^1.13.2",
-    "whatwg-fetch": "^2.0.2"
+    "whatwg-fetch": "^2.0.2",
+    "yamljs": "^0.2.8"
   }
 }

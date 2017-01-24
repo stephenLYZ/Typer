@@ -37,39 +37,44 @@ export default class CalendarPanel extends Component {
   	const _month = new Date().getMonth()
   	const _year = new Date().getFullYear()
     let dayArray = []
-    let postTime = posts.map(post => this.postTimeFormat(post))
+    let postIds = []
+    let postTimes = posts.map(post => this.postTimeFormat(post))
+    let isAbled = false
 
-    console.log(postTime[0]['postDay'])
-
-  	// for (let i = 0 ;i < postTime.length; i++) {
-    //   for(let j = 0 ; j < daysInMonth ; j++){
-    //     console.log(postTime[i].postYear == year && (postTime[i].postMonth-1) == month && postTime[i].postDay == j+1)
-    //     if(postTime[i].postYear == year && (postTime[i].postMonth-1) == month && postTime[i].postDay == j+1){
-    //       dayArray[j] = 'isabled'
-    //     } else {
-    //       dayArray[j] = j + 1
-    //     }
-    //     // console.log(dayArray[j])
-    //   }
-  	// }
-
+    for (let i = 0 ; i < daysInMonth; i++) {
+  	  dayArray[i] = i + 1
+  	}
 
   	return  dayArray.map((item, i) => {
-      console.log(item)
-      return (
-  	  	 _year === year && _month === month && item === 'isabled' ?
-  	  	   <div className='date-cell button' key={i}>{i + 1}</div>
-  	  	   : _year === year && _month === month && item === today ?
-           <div className='date-cell today' key={i}>{item}</div>
-           : <div className='date-cell' key={i}>{item}</div>
-  	  )
 
+      isAbled = false
 
-          // <Link to={`/post/${post.id}`}>
+      for(let i = 0;i < postTimes.length;i++){
+        if(postTimes[i].postDay == item && postTimes[i].postYear == year && postTimes[i].postMonth-1 == month){
+          isAbled = true
+          postIds[item] = posts[i].id
+          break
+        }
+      }
 
-            // <div className='date-cell button' key={i}>{item}</div>
-          // </Link>
-      })
+      if(isAbled &&  _year === year && _month === month && item === today ) {
+        return (
+            <Link to={`/post/${postIds[item]}`} key={i}>
+              <div className='date-cell today button'>{item}</div>
+            </Link>
+          )
+      } else if( isAbled ) {
+        return (
+            <Link to={`/post/${postIds[item]}`} key={i}>
+              <div className='date-cell button'>{item}</div>
+            </Link>
+          )
+      } else if( _year === year && _month === month && item === today ){
+        return (<div className='date-cell today' key={i}>{item}</div>)
+      } else {
+        return ( <div className='date-cell' key={i}>{item}</div> )
+      }
+    })
 
   }
 

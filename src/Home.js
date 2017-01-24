@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Calendar from './components/calendar/Calendar'
+import Footer from './components/footer'
 
 export default class Home extends Component {
 
@@ -18,11 +19,6 @@ export default class Home extends Component {
 	constructor(props) {
 		super(props)
 
-		// this.state = {
-		// 	year: null,
-		// 	month: null,
-		// 	day: null
-		// }
 	}
 
 	componentDidMount() {
@@ -32,7 +28,10 @@ export default class Home extends Component {
 
 	render() {
 		return (
-		  <Calendar posts={this.props.posts} />
+			<div>
+				<Calendar posts={this.props.posts} />
+				<Footer />
+			</div>
 		)
 	}
 }

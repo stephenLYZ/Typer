@@ -1,10 +1,14 @@
 
+.container {
+	margin: 40px ;
+}
+
 .calender-cantainer {
-	max-width: 300px;
-	max-height: 300px;
+	max-width: 400px;
+	max-height: 600px;
+	margin: 0 auto;
+	background-color: hsl(0, 0%, 100%);
 
-
-	background-color: #eee;
     -moz-box-shadow: 0 0 5px #ccc;
     -webkit-box-shadow: 0 0 5px #ccc;
     box-shadow: 0 0 5px #ccc;
@@ -14,8 +18,9 @@
     .row {
     	display: flex;
 	    flex-flow: row nowrap;
-	    width: 100%;
+	    width: 90%;
 	    justify-content: center;
+			padding: 0 20px;
     }
 
     .cell {
@@ -74,26 +79,64 @@
 
 .calendar-week {
 	flex-grow: 1;
-    flex-basis: 0;
-
+  flex-basis: 0;
+	border-bottom: 1px solid hsl(0, 0%, 93%);
+	border-top: 1px solid hsl(0, 0%, 93%);
     .cell {
-    	font-weight: bold;
+			color: hsl(0, 0%, 36%);
     }
+}
+
+.calendar-top {
+	max-width: 400px;
+	max-height: 300px;
+	-moz-box-shadow: 0 0 3px #000;
+	-webkit-box-shadow: 0 0 3px #000;
+	box-shadow: 0 0 3px #000;
+	font: normal 15px Helvetica Neue, Helvetica, Arial, sans-serif;
+	min-width: 280px;
+	background:  linear-gradient(70deg,hsl(0, 0%, 13%),hsl(0, 0%, 36%));
+	color: hsl(0, 0%, 100%);
+	text-align: center;
+	position: relative;
+	margin: 0 auto;
+
+	p:nth-child(1) {
+		font-size: 70px;
+		line-height: 130px;
+		margin: 0;
+	}
+	p:nth-child(2) {
+		margin-top: -20px;
+		font-size: 20px;
+		padding-bottom: 30px;
+	}
 }
 
 .calendar-panel {
 	background: hsl(0, 0%, 100%);
+	padding: 0 20px 25px;
 	.date-cell {
 		width: calc(100% / 7);
 		display: inline-block;
 		text-align: center;
-		line-height: 2.5rem;
+		line-height: 2.8rem;
+		font-weight: bolder;
 	}
 	.today {
 		margin: -1px;
 		cursor: pointer;
 		background: none;
 		border: 1px solid hsl(0, 100%, 85%);
-		border-radius: 50% 50%;
+	}
+	.button {
+		transition: all .2s ease-out;
+		cursor: pointer;
+		background: hsl(300, 3%, 94%);;
+
+		&:hover {
+			background: hsl(0, 0%, 36%);
+			color: hsl(0, 0%, 100%);
+		}
 	}
 }

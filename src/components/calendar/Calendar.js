@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import CalendarHeader from './CalendarHeader'
 import CalendarWeek from './CalendarWeek'
 import CalendarPanel from './CalendarPanel'
+import CalendarTop from './CalendarTop'
 
 import './calendar.scss'
 
@@ -16,6 +17,7 @@ export default class Calendar extends Component {
   		year: date.getFullYear(),
       month: date.getMonth(),
       dayNames: ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],
+      fullDayNames: ['Sunday','Monday','TuesDay','Wednesday','Thursday','Friday','Saturday'],
       monthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
       firstOfMonth: null,
       daysInMonth: null,
@@ -83,7 +85,7 @@ export default class Calendar extends Component {
     Object.assign(state,this.calculate.call(null, state.year, state.month))
     this.setState(state)
   }
-  
+
   renderHeader() {
     return (
       <CalendarHeader
@@ -120,12 +122,23 @@ export default class Calendar extends Component {
     )
   }
 
+  renderTop() {
+    return (
+      <CalendarTop
+        today = {this.state.today}
+        fullDayNames = {this.state.fullDayNames}
+      />
+    )
+  }
   render() {
     return (
-      <div className='calender-cantainer'>
-        {this.renderHeader()}
-        {this.renderWeek()}
-        {this.renderPanel()}
+      <div className="container">
+        {this.renderTop()}
+        <div className='calender-cantainer'>
+          {this.renderHeader()}
+          {this.renderWeek()}
+          {this.renderPanel()}
+        </div>
       </div>
     )
   }
