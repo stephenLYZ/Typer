@@ -1,6 +1,6 @@
 {
   "name": "@vueact/typer",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A diary generator powered by Github issues && React && React-router.",
   "main": "src/App.js",
   "bin": {
@@ -9,7 +9,7 @@
   "scripts": {
     "start": "node server.js",
     "build": "rimraf dist & cross-env NODE_ENV=production webpack --config webpack.config.prod.js ",
-    "release": "rimraf dist & webpack --config webpack.config.npm.js "
+    "release": "rimraf dist & cross-env NODE_ENV=npm webpack --config webpack.config.npm.js "
   },
   "repository": {
     "type": "git",
