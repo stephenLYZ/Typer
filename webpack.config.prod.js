@@ -9,7 +9,7 @@ module.exports = {
     vendor: ["history", "qs", "react", "react-dom","react-router","whatwg-fetch"]
   },
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, 'lib'),
     filename: 'typer.[hash:8].js'
   },
   module: {
@@ -43,7 +43,7 @@ module.exports = {
       }
     }),
     new HtmlWebpackPlugin({
-      title: config.title,
+      title: 'typer',
       filename: 'index.html',
       template: './src/template/index.ejs',
       config: config,
