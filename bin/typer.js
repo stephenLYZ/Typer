@@ -29,7 +29,7 @@ program
     folder = folder || ''
     var files = [
       { name: '.gitignore', data: ignore },
-      { name: 'config.yaml', data: config }
+      { name: 'config.yml', data: config }
     ]
     fs.copySync(path.join(__dirname, '../dist'), path.join(process.cwd(), folder))
 
