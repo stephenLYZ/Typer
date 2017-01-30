@@ -1,9 +1,11 @@
 {
-  "name": "Typer",
-  "version": "1.0.1",
-  "description": "",
+  "name": "@vueact/typer",
+  "version": "1.0.4",
+  "description": "A diary generator powered by Github issues && React && React-router.",
   "main": "src/App.js",
-  "bin": "./bin/type.js",
+  "bin": {
+    "typer": "./bin/typer.js"
+  },
   "scripts": {
     "start": "node server.js",
     "build": "rimraf dist & cross-env NODE_ENV=production webpack --config webpack.config.prod.js ",
@@ -11,19 +13,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stephenLYao/react-kit.git"
+    "url": "git+https://github.com/stephenLYao/Typer.git"
   },
   "keywords": [
     "react",
-    "webpack",
-    "babel"
+    "issues",
+    "github",
+    "diary"
   ],
-  "author": "stephenliu",
+  "author": "vueact",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/stephenLYao/react-kit/issues"
+    "url": "https://github.com/stephenLYao/Typer/issues"
   },
-  "homepage": "https://github.com/stephenLYao/react-kit#readme",
+  "homepage": "https://github.com/stephenLYao/Typer",
   "devDependencies": {
     "babel": "^6.5.2",
     "babel-core": "^6.14.0",

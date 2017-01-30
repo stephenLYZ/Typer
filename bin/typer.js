@@ -18,7 +18,7 @@ program
   .command('version')
   .description('Typer version is ')
   .action(function(){
-    console.log(require('./package.json').version)
+    console.log(require('../package.json').version)
   })
 
 // init
@@ -31,7 +31,7 @@ program
       { name: '.gitignore', data: ignore },
       { name: 'config.yaml', data: config }
     ]
-    fs.copySync(path.join(__dirname, 'dist'), path.join(process.cwd(), folder))
+    fs.copySync(path.join(__dirname, '../dist'), path.join(process.cwd(), folder))
 
     files.forEach(function(file) {
       var fileName = path.join(process.cwd(), folder, file.name)
