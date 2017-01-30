@@ -70,7 +70,7 @@ class App extends Component {
 
 const router = (
   <Router history={browserHistory}>
-  	<Route path='/' component={App}>
+  	<Route path={`/${window.config.repo}`} component={App}>
   	  <IndexRoute component={Home} />
   	  <Route path='/post/:id' component={Post} />
   	</Route>
