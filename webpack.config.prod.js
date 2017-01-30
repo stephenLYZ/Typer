@@ -1,6 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const config = JSON.stringify(require('./config.js'))
 
 module.exports = {
   entry: {
@@ -9,8 +10,7 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'typer.min.js',
-    publicPath: '/static/'
+    filename: 'typer.[hash:8].js'
   },
   module: {
     loaders: [
@@ -22,7 +22,7 @@ module.exports = {
       {
         test: /\.scss$/,
 	      exclude: /node_modules/,
-	      loader: ExtractTextPlugin.extract("style-loader", "css-loader!sass-loader")
+	      loader: 'style!css!sass'
       }
     ],
   },
@@ -31,7 +31,7 @@ module.exports = {
   },
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.bundle.js"),
+    new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.[hash:8].js"),
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify('production')
@@ -42,6 +42,13 @@ module.exports = {
         warnings: false
       }
     }),
-    new ExtractTextPlugin('typer.css')
+    new HtmlWebpackPlugin({
+      title: config.title,
+      filename: 'index.html',
+      template: './src/template/index.ejs',
+      config: config,
+      inject: 'body',
+      hash: false
+    })
   ]
 }
