@@ -31,7 +31,7 @@ program
       { name: '.gitignore', data: ignore },
       { name: 'config.yml', data: config }
     ]
-    fs.copySync(path.join(__dirname, '../dist'), path.join(process.cwd(), folder))
+    fs.copySync(path.join(__dirname, '../lib'), path.join(process.cwd(), folder))
 
     files.forEach(function(file) {
       var fileName = path.join(process.cwd(), folder, file.name)
@@ -61,7 +61,7 @@ program
       token = token.replace(/[\r\n]+/g, '')
       token = token.charAt(0) +'#'+ token.substr(1)
     }
-      
+
     html = html.replace('$config', JSON.stringify(config))
     fs.outputFileSync(process.cwd() +'/index.html', html)
 
