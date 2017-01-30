@@ -56,8 +56,12 @@ program
             return console.log('Please finish your configure information !!')
     }
 
-    token = token.replace(/[\r\n]+/g, '')
-    config.token = token.charAt(0) +'#'+ token.substr(1)
+    if (config.token) {
+      var token = config.token
+      token = token.replace(/[\r\n]+/g, '')
+      token = token.charAt(0) +'#'+ token.substr(1)
+    }
+      
     html = html.replace('$config', JSON.stringify(config))
     fs.outputFileSync(process.cwd() +'/index.html', html)
 
