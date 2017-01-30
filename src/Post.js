@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Content from './components/contents/Content'
 import Footer from './components/footer'
-
 export default class Post extends Component {
 
   static propTypes = {
