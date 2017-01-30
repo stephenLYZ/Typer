@@ -1,6 +1,6 @@
 {
   "name": "@vueact/typer",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "A diary generator powered by Github issues && React && React-router.",
   "main": "src/App.js",
   "bin": {
