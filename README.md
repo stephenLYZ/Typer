@@ -35,12 +35,14 @@ or
 
 Then you will see the files tree like this:   
 
--- diary
- -- index.html
- -- typer.[hash].js
- -- vendor.[hash].js
- -- config.yml
- -- .gitignore
+```
+-- diary  
+ -- index.html  
+ -- typer.[hash].js  
+ -- vendor.[hash].js  
+ -- config.yml  
+ -- .gitignore  
+```
 
 ### 3. Configure
 
@@ -74,15 +76,16 @@ Run build to generate diary
 `$ typer build`
 
 ### 5. Deploy
-Now push all files to the repo `gh-pages` branch which you modify in the `config.yml`,
+Now push all files to the repo `gh-pages` branch which you modify in the `config.yml`,  
 and Everything has done, Just have typer :)
 
 
 ## Todo
 
-- [] add theme configure
+- [ ]  add theme configure
 
-**very thanks [Mirror](https://github.com/LoeiFy/Mirror)! **
+
+**Very thanks [Mirror](https://github.com/LoeiFy/Mirror)!**
 
 ## License
 MIT
