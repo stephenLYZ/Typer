@@ -72,7 +72,7 @@ const router = (
   <Router history={browserHistory}>
   	<Route path={`/${window.config.repo}`} component={App}>
   	  <IndexRoute component={Home} />
-  	  <Route path='/post/:id' component={Post} />
+  	  <Route path={`/${window.config.repo}/post/:id`} component={Post} />
   	</Route>
   </Router>
 )

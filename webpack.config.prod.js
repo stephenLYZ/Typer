@@ -1,8 +1,10 @@
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const config = JSON.stringify(require('./config.js'))
+const config = require('./config.js')
+const _config = JSON.stringify(config)
 
+console.log(config)
 module.exports = {
   entry: {
     app:  './src/App',
@@ -10,7 +12,8 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, 'lib'),
-    filename: 'typer.[hash:8].js'
+    filename: 'typer.[hash:8].js',
+    publicPath: `/${config.repo}`
   },
   module: {
     loaders: [
@@ -46,9 +49,14 @@ module.exports = {
       title: 'typer',
       filename: 'index.html',
       template: './src/template/index.ejs',
-      config: config,
+      config: _config,
       inject: 'body',
       hash: false
+    }),
+    new HtmlWebpackPlugin({
+      filename: '404.html',
+      template: './src/template/404.ejs',
+      inject: false
     })
   ]
 }

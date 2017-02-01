@@ -59,13 +59,13 @@ export default class CalendarPanel extends Component {
 
       if(isAbled &&  _year === year && _month === month && item === today ) {
         return (
-            <Link to={`/post/${postIds[item]}`} key={i}>
+            <Link to={`/${window.config.repo}/post/${postIds[item]}`} key={i}>
               <div className='date-cell today button'>{item}</div>
             </Link>
           )
       } else if( isAbled ) {
         return (
-            <Link to={`/post/${postIds[item]}`} key={i}>
+            <Link to={`/${window.config.repo}/post/${postIds[item]}`} key={i}>
               <div className='date-cell button'>{item}</div>
             </Link>
           )
