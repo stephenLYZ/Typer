@@ -63,7 +63,7 @@ program
     }
 
     html = html.replace('$config', JSON.stringify(config))
-    html = html.replace('$repo', config.repo)
+    html = html.replace(/$repo/g, config.repo)
     fs.outputFileSync(process.cwd() +'/index.html', html)
 
     console.log('Good ~ Enjoy typer everyday :)')
