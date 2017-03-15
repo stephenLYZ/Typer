@@ -4,7 +4,7 @@
 [![VersionEye](https://img.shields.io/versioneye/d/ruby/rails.svg?maxAge=2592000)]()
 [![npm](https://img.shields.io/npm/l/express.svg?maxAge=2592000)]()
 
-![typer](https://cloud.githubusercontent.com/assets/11830681/22433740/6136635e-e754-11e6-98a8-22c1fba15085.png)
+<img src="https://cloud.githubusercontent.com/assets/11830681/22433740/6136635e-e754-11e6-98a8-22c1fba15085.png" width="200" />
 
 
 > A diary generator powered by Github issues && React && React-router.
@@ -13,6 +13,7 @@
 
 [Click Here!](https://stephenlyao.github.io/diary/)
 
+![demo](https://reactchina.sxlcdn.com/uploads/default/original/2X/7/732d7f5a3a2a2dca675b76019603581bcb6c021e.png)
 ## Usage
 
 ### 1. Install typer
