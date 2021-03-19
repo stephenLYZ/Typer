@@ -9,6 +9,9 @@
 
 > A diary generator powered by Github issues && React && React-router.
 
+## [Demo](https://stephenlyz.github.io/diary/)
+![image](https://user-images.githubusercontent.com/11830681/111729412-fb2fda80-88a9-11eb-83b0-0379e5008d40.png)
+
 ## Usage
 
 ### 1. Install typer
