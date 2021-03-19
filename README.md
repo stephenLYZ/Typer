@@ -9,11 +9,6 @@
 
 > A diary generator powered by Github issues && React && React-router.
 
-## Demo
-
-[Click Here!](https://stephenlyao.github.io/diary/)
-
-![demo](https://reactchina.sxlcdn.com/uploads/default/original/2X/7/732d7f5a3a2a2dca675b76019603581bcb6c021e.png)
 ## Usage
 
 ### 1. Install typer
